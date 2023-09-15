@@ -64,3 +64,21 @@ function alphabetSubsequence(string) {
 }
 
 console.log(alphabetSubsequence("cdcecrtg"));
+
+// Alternatitng Sum: given an array of integers
+// add the even index numbers and the
+// odd index numbers and return the two sums in 
+// separate array
+// like this [evenIndexSum, oddIndexSum]
+
+const alternatingSum = (arr) =>{
+  let oddSumm = 0
+  let evenSum = 0
+  arr.forEach((x, i)=>{
+    i % 2 === 0 ? evenSum += x : oddSumm += x 
+  })
+
+  return [evenSum, oddSumm]
+}
+
+console.log(alternatingSum([50, 60, 60, 45, 70, 10, 40, 10]));
