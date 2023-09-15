@@ -48,12 +48,19 @@ function alphabetSubsequence(string) {
       charAtArr.push(alphabetUniString.indexOf(char));
     }
   });
-  console.log(charAtArr);
 
-  const truthValue = charAtArr.every((x, i) => {
-    return i === 0 || x >= arr[i - 1];
+  let truthArr = [];
+  charAtArr.forEach((x, i) => {
+    if (charAtArr[i+1]==undefined){
+        return
+    }
+    if (x < charAtArr[i + 1]) {
+        truthArr.push(true)
+    } else truthArr.push(false)
   });
-  console.log(truthValue);
+  if(truthArr.includes(false)){
+    return false
+  } else return true
 }
 
-console.log(alphabetSubsequence("cegikm"));
+console.log(alphabetSubsequence("cdcecrtg"));
